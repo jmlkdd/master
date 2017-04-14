@@ -13,7 +13,7 @@ def get_logger(task_name=None, log_dir=None, level=logging.DEBUG, console_out=Tr
         os.makedirs(log_dir)
     if task_name is None:
         task_name = 'root'
-    log_file = log_dir + "%s.log" % task_name
+    log_file = log_dir + "%s.logger" % task_name
 
     if isinstance(level, basestring):
         level = level.lower()
@@ -41,5 +41,5 @@ def get_logger(task_name=None, log_dir=None, level=logging.DEBUG, console_out=Tr
     logger.setLevel(level)
     return logger
 
-# log = get_logger()
-# log.info('reefege')
+# logger = get_logger()
+# logger.info('reefege')

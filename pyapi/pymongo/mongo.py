@@ -1,20 +1,20 @@
 # coding=utf-8
 __author__ = 'luojianbo'
 
-import pymongo
+import pyapi.pymongo
 import traceback
 import time
 import sys
 
 
 class MongDb(object):
-    ASCENDING = pymongo.ASCENDING
-    DESCENDING = pymongo.DESCENDING
+    ASCENDING = pyapi.pymongo.ASCENDING
+    DESCENDING = pyapi.pymongo.DESCENDING
 
     def __init__(self, dbhost, dbport, dbname, dbuser, dbpass):
         # connect db
         try:
-            self.conn = pymongo.MongoClient(dbhost, dbport)
+            self.conn = pyapi.pymongo.MongoClient(dbhost, dbport)
             self.db = self.conn[dbname]  # connect db
             if dbuser and dbpass:
                 self.connected = self.db.authenticate(dbuser, dbpass)
